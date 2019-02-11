@@ -1,7 +1,7 @@
 [package]
 name = "cabo"
 version = "0.1.0"
-authors = ["shuimei <shuimeihe@gmail.com>"]
+authors = ["budi <budisyahiddin@protonmail.ch>"]
 edition = "2018"
 
 [dependencies]
