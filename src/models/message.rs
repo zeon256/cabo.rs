@@ -1,6 +1,6 @@
 pub enum Message {
     Init {
-
+        
     },
     SelfDraw,
     SelfPeek,
