@@ -1,6 +1,7 @@
-use super::card::Card;
+use super::card::CardValue;
 
 pub struct Player {
+    pub id: u32,
     pub username: String,
-    pub cards: Vec<Card>
+    pub cards: Vec<CardValue>
 }
