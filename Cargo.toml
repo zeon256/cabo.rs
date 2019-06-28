@@ -1,18 +1,12 @@
 [package]
 name = "cabo"
 version = "0.1.0"
-authors = ["budi <budisyahiddin@protonmail.ch>"]
+authors = ["euwbah <euwbah@gmail.com>, budi <budisyahiddin@protonmail.ch>"]
 edition = "2018"
 
 [dependencies]
-rocket = "0.4.0"
 serde_json = "1.0"
 serde = "1.0.87"
 num-traits = "0.2"
 num-derive = "0.2"
 rand = "0.6.5"
-
-[dependencies.rocket_contrib]
-version = "*"
-default-features = false
-features = ["json"]

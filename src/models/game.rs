@@ -2,6 +2,7 @@ use crate::models::player::Player;
 use crate::models::card::CardValue;
 
 use rand::{thread_rng, Rng};
+use rand::seq::SliceRandom;
 
 pub struct Game {
     pub lobby_password: String,
@@ -16,9 +17,7 @@ pub struct Deck {
 
 impl Deck {
     pub fn new() -> Deck {
-        let mut d = Deck {
-            cards: Vec::new()
-        };
+        let mut d = Deck { cards: Vec::new() };
 
         for val in 1..=13 {
             for suit in 1..=4 {
@@ -26,8 +25,11 @@ impl Deck {
             }
         }
 
-
-
         d
+    }
+
+    pub fn shuffle(&mut self) {
+        let mut rng = thread_rng();
+        self.cards.shuffle(&mut rng);
     }
 }
