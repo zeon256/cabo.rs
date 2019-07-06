@@ -66,14 +66,10 @@ impl Game {
         // distribute cards
         let idx_diff = self.players.len();
 
-        for idx in 0..idx_diff {
-            self.players[idx].cards.push(self.deck.cards.remove(idx));
-            self.players[idx]
-                .cards
-                .push(self.deck.cards.remove(idx + idx_diff));
-            self.players[idx]
-                .cards
-                .push(self.deck.cards.remove(idx + idx_diff + idx_diff));
+        for (idx, p) in self.players.iter_mut().enumerate() {
+            p.cards.push(self.deck.cards.remove(idx));
+            p.cards.push(self.deck.cards.remove(idx + idx_diff));
+            p.cards.push(self.deck.cards.remove(idx + idx_diff + idx_diff));
         }
 
         println!("{:?}", self.players);

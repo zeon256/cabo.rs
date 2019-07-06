@@ -14,6 +14,4 @@ impl Player {
     pub fn new(id: u32, username: &str) -> Self {
         Player { id, username: username.to_string(), cards: Vec::with_capacity(3) }
     }
-
-
 }
