@@ -1,6 +1,6 @@
+use crate::message::GameError;
 use crate::models::card::CardValue;
 use crate::models::player::Player;
-use crate::message::GameError;
 
 use rand::seq::SliceRandom;
 use rand::{thread_rng, Rng};
@@ -49,27 +49,31 @@ impl Game {
     /// Random number denotes the first player to start the draw
     ///
     /// Then game starts
-    pub fn start(&mut self) -> Result<(), GameError>{
+    pub fn start(&mut self) -> Result<(), GameError> {
         if self.lobby_password.is_empty() {
-            return Err(GameError::EmptyLobbyPassword)
+            return Err(GameError::EmptyLobbyPassword);
         }
 
         if self.players.len() < 2 {
-            return Err(GameError::NotEnoughPlayers)
+            return Err(GameError::NotEnoughPlayers);
         }
 
         self.curr_state = match self.curr_state {
             GameState::Init => GameState::Started,
-            _ => return Err(GameError::WrongPrevGameState)
+            _ => return Err(GameError::WrongPrevGameState),
         };
 
         // distribute cards
-         let idx_diff = self.players.len();
+        let idx_diff = self.players.len();
 
         for idx in 0..idx_diff {
             self.players[idx].cards.push(self.deck.cards.remove(idx));
-            self.players[idx].cards.push(self.deck.cards.remove(idx + idx_diff));
-            self.players[idx].cards.push(self.deck.cards.remove(idx + idx_diff + idx_diff));
+            self.players[idx]
+                .cards
+                .push(self.deck.cards.remove(idx + idx_diff));
+            self.players[idx]
+                .cards
+                .push(self.deck.cards.remove(idx + idx_diff + idx_diff));
         }
 
         println!("{:?}", self.players);
