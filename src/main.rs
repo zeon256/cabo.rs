@@ -1,4 +1,3 @@
-#![feature(proc_macro_hygiene, decl_macro)]
 mod models;
 use self::models::*;
 use crate::models::game::Deck;
@@ -9,7 +8,6 @@ extern crate num_traits;
 extern crate rand;
 
 fn main() {
-
     let mut d = Deck::new();
     println!("{:?}", d);
 }
