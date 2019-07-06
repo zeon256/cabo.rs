@@ -5,7 +5,7 @@ use std::fmt;
 #[derive(Debug)]
 pub struct CardValue {
     pub value: Value,
-    pub suit: Suit
+    pub suit: Suit,
 }
 
 impl CardValue {
@@ -16,7 +16,7 @@ impl CardValue {
     pub fn from_primitive(value: i32, suit: i32) -> CardValue {
         CardValue {
             value: FromPrimitive::from_i32(value).unwrap(),
-            suit: FromPrimitive::from_i32(suit).unwrap()
+            suit: FromPrimitive::from_i32(suit).unwrap(),
         }
     }
 }
@@ -31,18 +31,18 @@ impl fmt::Display for CardValue {
 #[derive(Debug)]
 pub struct CardPosition {
     pub player_id: u32,
-    pub position: Position
+    pub position: Position,
 }
 
 #[derive(Debug)]
 pub struct Card {
     pub value: Option<CardValue>,
-    pub position: CardPosition
+    pub position: CardPosition,
 }
 
 impl Card {
     pub fn new(value: Option<CardValue>, position: CardPosition) -> Card {
-        Card { value, position}
+        Card { value, position }
     }
 }
 
@@ -60,7 +60,7 @@ pub enum Value {
     Ten,
     Jack,
     Queen,
-    King
+    King,
 }
 
 #[derive(FromPrimitive, ToPrimitive, Debug)]
@@ -68,12 +68,12 @@ pub enum Suit {
     Diamond = 1,
     Club,
     Heart,
-    Spade
+    Spade,
 }
 
 #[derive(FromPrimitive, ToPrimitive, Debug)]
 pub enum Position {
     Left,
     Center,
-    Right
+    Right,
 }

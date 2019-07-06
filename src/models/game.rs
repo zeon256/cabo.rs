@@ -1,19 +1,19 @@
-use crate::models::player::Player;
 use crate::models::card::CardValue;
+use crate::models::player::Player;
 
-use rand::{thread_rng};
 use rand::seq::SliceRandom;
+use rand::thread_rng;
 
 #[derive(Debug)]
 pub struct Game {
     pub lobby_password: String,
     pub players: Vec<Player>,
-    pub deck: Deck
+    pub deck: Deck,
 }
 
 #[derive(Debug)]
 pub struct Deck {
-    pub cards: Vec<CardValue>
+    pub cards: Vec<CardValue>,
 }
 
 impl Deck {

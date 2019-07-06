@@ -2,7 +2,8 @@ mod models;
 use self::models::*;
 use crate::models::game::Deck;
 
-#[macro_use] extern crate num_derive;
+#[macro_use]
+extern crate num_derive;
 extern crate num_traits;
 
 extern crate rand;

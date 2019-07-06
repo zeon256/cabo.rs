@@ -1,8 +1,6 @@
 #[derive(Debug)]
 pub enum Message {
-    Init {
-        
-    },
+    Init {},
     SelfDraw,
     SelfPeek,
     Place,
@@ -11,9 +9,5 @@ pub enum Message {
     OtherDraw,
     OtherPeek,
     Turn,
-    End
+    End,
 }
-
-
-
-
