@@ -27,7 +27,7 @@ impl Game {
             id,
             lobby_password: lobby_password.to_string(),
             players: Vec::with_capacity(4),
-            deck: Deck::new(),
+            deck: Deck::new().shuffle(),
             curr_state: GameState::Init,
         }
     }
