@@ -11,3 +11,16 @@ pub enum Message {
     Turn,
     End,
 }
+
+#[derive(Debug)]
+pub struct WSError {
+    pub code: u16,
+    pub message: String
+}
+
+#[derive(Debug)]
+pub enum GameError {
+    NotEnoughPlayers,
+    EmptyLobbyPassword,
+    WrongPrevGameState
+}
